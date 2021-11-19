@@ -4,7 +4,6 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public class Bilde extends Tekst {
 	private String url;
-	// TODO - objekt variable
 
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
 		super(id, bruker, dato, tekst);
@@ -27,7 +26,8 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
-		return "BILDE"+"\n"+ super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+"et bilde"+"\n"+url+"\n";
+		return "BILDE" + "\n" + super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n"
+				+ super.getLikes() + "\n" + "et bilde" + "\n" + url + "\n";
 
 	}
 
