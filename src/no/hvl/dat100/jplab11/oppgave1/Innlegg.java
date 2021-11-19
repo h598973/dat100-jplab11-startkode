@@ -19,7 +19,6 @@ public abstract class Innlegg {
 		this.bruker = bruker;
 		this.dato = dato;
 
-		
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
@@ -60,10 +59,10 @@ public abstract class Innlegg {
 	}
 
 	public boolean erLik(Innlegg innlegg) {
-		boolean lik = false;
 		if (id == getId()) {
-			lik = true;}
-		return lik;
+			return true;
+		}
+		return false;
 
 	}
 
@@ -81,5 +80,4 @@ public abstract class Innlegg {
 
 	}
 
-	
 }
