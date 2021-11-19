@@ -61,7 +61,7 @@ public class Blogg {
 
 	public boolean ledigPlass() {
 		boolean ledigPlass = false;
-		if (nesteLedige > samling.length) {
+		if (nesteLedige >= samling.length) {
 			ledigPlass = true;
 		}
 
@@ -70,7 +70,7 @@ public class Blogg {
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
-		boolean ny = finnInnlegg(innlegg.getId()) == -1;
+		boolean ny = finnInnlegg(innlegg) == -1;
 		if (ny && nesteLedige < samling.length) {
 			samling[nesteLedige] = innlegg;
 			nesteLedige++;
@@ -82,6 +82,7 @@ public class Blogg {
 	}
 
 	public String toString() {
+		
 		return getAntall() + "\n" + samling;
 
 	}
