@@ -56,19 +56,22 @@ public class Blogg {
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
-		boolean ny = finnInnlegg(innlegg.getId()) == -1;
-		if (ny && nesteLedige < innleggTabell.length) {
-			innleggTabell[nesteLedige] = innlegg;
-			nesteLedige++;
-			return true;
-		} else {
+		if (this.ledigPlass()==false)
 			return false;
-		}
+		if (this.finnes(innlegg)==true)
+			return false;
+		this.innleggTabell[this.nesteLedige] = innlegg;
+		this.nesteLedige +=1;
+		return true;
 
 	}
 
 	public String toString() {
-		return getAntall() + "\n" + innleggTabell;
+		String output = nesteLedige + "\n";
+		for (int i = 0; i<this.nesteLedige; i++) {
+			output = output + innleggTabell[i].toString();
+		}
+		return output;
 
 	}
 
