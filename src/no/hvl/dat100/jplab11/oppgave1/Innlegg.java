@@ -59,7 +59,7 @@ public abstract class Innlegg {
 	}
 
 	public boolean erLik(Innlegg innlegg) {
-		if (id == getId()) {
+		if (innlegg.id == this.getId()) {
 			return true;
 		}
 		return false;

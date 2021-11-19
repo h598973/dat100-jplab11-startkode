@@ -6,7 +6,7 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Blogg {
 
 	Innlegg[] innleggTabell;
-	int nesteLedige;
+	int nesteLedige=0;
 
 	public Blogg() {
 
@@ -18,7 +18,7 @@ public class Blogg {
 	}
 
 	public int getAntall() {
-		return nesteLedige;
+		return this.nesteLedige;
 	}
 
 	public Innlegg[] getSamling() {
@@ -46,22 +46,17 @@ public class Blogg {
 	}
 
 	public boolean ledigPlass() {
-		boolean ledigPlass = false;
-		if (nesteLedige > innleggTabell.length) {
-			ledigPlass = true;
+		if (this.getAntall()==this.innleggTabell.length) {
+			return false;
 		}
-
-		return ledigPlass;
-
+			return true;
 	}
 
 	public boolean leggTil(Innlegg innlegg) {
-		if (this.ledigPlass()==false)
-			return false;
-		if (this.finnes(innlegg)==true)
+		if (this.ledigPlass() == false ||this.finnes(innlegg) == true)
 			return false;
 		this.innleggTabell[this.nesteLedige] = innlegg;
-		this.nesteLedige +=1;
+		this.nesteLedige ++;
 		return true;
 
 	}
