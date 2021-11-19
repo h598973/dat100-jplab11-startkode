@@ -5,7 +5,6 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Tekst extends Innlegg {
 	private String tekst;
-	// TODO: objektvariable
 
 	public Tekst() {
 
@@ -33,7 +32,7 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		return "TEKST"+"\n" + super.toString() + tekst +"\n";
+		return "TEKST" + "\n" + super.toString() + tekst + "\n";
 
 	}
 
